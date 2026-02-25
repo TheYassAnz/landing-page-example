@@ -2,19 +2,20 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Pull repository') {
             steps {
-                echo 'Building..'
+                git branch: 'main', url: 'https://github.com/fredericEducentre/landing-page-example.git'
             }
         }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
+
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                sshagent(credentials: ['05a64152-0fbb-4882-bdc2-357bc9d884ac']) {
+                    sh '''
+                        scp -o StrictHostKeyChecking=no -r ./* \
+                        yassine-efrei@ssh-yassine-efrei.alwaysdata.net:~/www/
+                    '''
+                }
             }
         }
     }
