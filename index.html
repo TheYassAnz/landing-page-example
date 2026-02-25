@@ -1,227 +1,267 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
+  <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X36395BJ4R"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-X36395BJ4R"
+    ></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-    gtag('config', 'G-X36395BJ4R');
+      gtag("config", "G-X36395BJ4R");
     </script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Landing Page – Effet Crochet</title>
-  <style>
-    :root {
-      --bg: #0b0d12;
-      --primary: #7c7cff;
-      --secondary: #00ffd5;
-      --text: #f5f7ff;
-      --muted: #a1a6c8;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page – Effet Crochet</title>
+    <style>
+      :root {
+        --bg: #0b0d12;
+        --primary: #7c7cff;
+        --secondary: #00ffd5;
+        --text: #f5f7ff;
+        --muted: #a1a6c8;
+      }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', system-ui, sans-serif;
-    }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", system-ui, sans-serif;
+      }
 
-    body {
-      background: radial-gradient(1200px 600px at 50% -10%, #1a1f3c, var(--bg));
-      color: var(--text);
-      overflow-x: hidden;
-    }
+      body {
+        background: radial-gradient(
+          1200px 600px at 50% -10%,
+          #1a1f3c,
+          var(--bg)
+        );
+        color: var(--text);
+        overflow-x: hidden;
+      }
 
-    header {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      padding: 4rem 2rem;
-    }
+      header {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        padding: 4rem 2rem;
+      }
 
-    .hero {
-      max-width: 1100px;
-      text-align: center;
-      position: relative;
-      z-index: 2;
-    }
+      .hero {
+        max-width: 1100px;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+      }
 
-    .badge {
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      border-radius: 999px;
-      background: rgba(124,124,255,0.15);
-      color: var(--primary);
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      animation: float 4s ease-in-out infinite;
-    }
+      .badge {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        border-radius: 999px;
+        background: rgba(124, 124, 255, 0.15);
+        color: var(--primary);
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        animation: float 4s ease-in-out infinite;
+      }
 
-    h1 {
-      font-size: clamp(2.8rem, 6vw, 4.5rem);
-      line-height: 1.05;
-      margin-bottom: 1.5rem;
-    }
+      h1 {
+        font-size: clamp(2.8rem, 6vw, 4.5rem);
+        line-height: 1.05;
+        margin-bottom: 1.5rem;
+      }
 
-    h1 span {
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      position: relative;
-    }
+      h1 span {
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        position: relative;
+      }
 
-    p {
-      max-width: 680px;
-      margin: 0 auto 2.5rem;
-      color: var(--muted);
-      font-size: 1.1rem;
-    }
+      p {
+        max-width: 680px;
+        margin: 0 auto 2.5rem;
+        color: var(--muted);
+        font-size: 1.1rem;
+      }
 
-    .cta {
-      display: inline-flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
+      .cta {
+        display: inline-flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
 
-    .btn {
-      padding: 1rem 2rem;
-      border-radius: 14px;
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-      font-weight: 600;
-      transition: transform .3s ease, box-shadow .3s ease;
-    }
+      .btn {
+        padding: 1rem 2rem;
+        border-radius: 14px;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
 
-    .btn-primary {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: #000;
-      box-shadow: 0 20px 40px rgba(0,255,213,0.25);
-    }
+      .btn-primary {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: #000;
+        box-shadow: 0 20px 40px rgba(0, 255, 213, 0.25);
+      }
 
-    .btn-secondary {
-      background: transparent;
-      color: var(--text);
-      border: 1px solid rgba(255,255,255,0.2);
-    }
+      .btn-secondary {
+        background: transparent;
+        color: var(--text);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
 
-    .btn:hover {
-      transform: translateY(-4px) scale(1.03);
-      box-shadow: 0 30px 60px rgba(124,124,255,0.35);
-    }
+      .btn:hover {
+        transform: translateY(-4px) scale(1.03);
+        box-shadow: 0 30px 60px rgba(124, 124, 255, 0.35);
+      }
 
-    /* Crochet animation */
-    .hook {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      overflow: hidden;
-    }
+      /* Crochet animation */
+      .hook {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        overflow: hidden;
+      }
 
-    .line {
-      position: absolute;
-      width: 2px;
-      height: 140%;
-      top: -20%;
-      left: 50%;
-      background: linear-gradient(to bottom, transparent, var(--primary), transparent);
-      transform-origin: top;
-      animation: swing 6s ease-in-out infinite;
-    }
+      .line {
+        position: absolute;
+        width: 2px;
+        height: 140%;
+        top: -20%;
+        left: 50%;
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          var(--primary),
+          transparent
+        );
+        transform-origin: top;
+        animation: swing 6s ease-in-out infinite;
+      }
 
-    .dot {
-      position: absolute;
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: var(--secondary);
-      top: 38%;
-      left: calc(50% - 7px);
-      box-shadow: 0 0 20px var(--secondary);
-      animation: pulse 2s ease-in-out infinite;
-    }
+      .dot {
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: var(--secondary);
+        top: 38%;
+        left: calc(50% - 7px);
+        box-shadow: 0 0 20px var(--secondary);
+        animation: pulse 2s ease-in-out infinite;
+      }
 
-    /* Floating particles */
-    .particle {
-      position: absolute;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: rgba(124,124,255,0.6);
-      animation: drift linear infinite;
-    }
+      /* Floating particles */
+      .particle {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: rgba(124, 124, 255, 0.6);
+        animation: drift linear infinite;
+      }
 
-    @keyframes swing {
-      0% { transform: rotate(-8deg); }
-      50% { transform: rotate(8deg); }
-      100% { transform: rotate(-8deg); }
-    }
+      @keyframes swing {
+        0% {
+          transform: rotate(-8deg);
+        }
+        50% {
+          transform: rotate(8deg);
+        }
+        100% {
+          transform: rotate(-8deg);
+        }
+      }
 
-    @keyframes pulse {
-      0%,100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.5); opacity: 0.6; }
-    }
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.5);
+          opacity: 0.6;
+        }
+      }
 
-    @keyframes float {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
+      }
 
-    @keyframes drift {
-      from { transform: translateY(100vh); opacity: 0; }
-      to { transform: translateY(-10vh); opacity: 1; }
-    }
-  </style>
-</head>
-<body>
+      @keyframes drift {
+        from {
+          transform: translateY(100vh);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(-10vh);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="hook">
+        <div class="line"></div>
+        <div class="dot"></div>
+      </div>
 
-<header>
-  <div class="hook">
-    <div class="line"></div>
-    <div class="dot"></div>
-  </div>
+      <div class="hero">
+        <div class="badge">🚀 Nouvelle génération de SAHAAAAAA</div>
+        <h1>
+          Un <span>crochet visuel</span><br />qui capte l’attention
+          instantanément
+        </h1>
+        <p>
+          Animations fluides, effets premium et storytelling visuel pour
+          accrocher ton visiteur dès les premières secondes.
+        </p>
+        <div class="cta">
+          <button class="btn btn-primary">Commencer maintenant</button>
+          <button class="btn btn-secondary">Voir la démo</button>
+        </div>
+      </div>
+    </header>
 
-  <div class="hero">
-    <div class="badge">🚀 Nouvelle génération de Yassine Yellow</div>
-    <h1>Un <span>crochet visuel</span><br>qui capte l’attention instantanément</h1>
-    <p>
-      Animations fluides, effets premium et storytelling visuel pour accrocher ton visiteur
-      dès les premières secondes.
-    </p>
-    <div class="cta">
-      <button class="btn btn-primary">Commencer maintenant</button>
-      <button class="btn btn-secondary">Voir la démo</button>
-    </div>
-  </div>
-</header>
+    <script>
+      // Génération de particules animées
+      const hook = document.querySelector(".hook");
 
-<script>
-  // Génération de particules animées
-  const hook = document.querySelector('.hook');
+      for (let i = 0; i < 30; i++) {
+        const p = document.createElement("div");
+        p.className = "particle";
+        p.style.left = Math.random() * 100 + "vw";
+        p.style.animationDuration = 6 + Math.random() * 10 + "s";
+        p.style.animationDelay = Math.random() * 5 + "s";
+        hook.appendChild(p);
+      }
 
-  for (let i = 0; i < 30; i++) {
-    const p = document.createElement('div');
-    p.className = 'particle';
-    p.style.left = Math.random() * 100 + 'vw';
-    p.style.animationDuration = 6 + Math.random() * 10 + 's';
-    p.style.animationDelay = Math.random() * 5 + 's';
-    hook.appendChild(p);
-  }
-
-  // Effet d'attraction du crochet au scroll
-  window.addEventListener('scroll', () => {
-    const scrolled = window.scrollY;
-    const line = document.querySelector('.line');
-    line.style.transform = `rotate(${Math.sin(scrolled / 200) * 10}deg)`;
-  });
-</script>
-
-</body>
+      // Effet d'attraction du crochet au scroll
+      window.addEventListener("scroll", () => {
+        const scrolled = window.scrollY;
+        const line = document.querySelector(".line");
+        line.style.transform = `rotate(${Math.sin(scrolled / 200) * 10}deg)`;
+      });
+    </script>
+  </body>
 </html>
-
