@@ -15,7 +15,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/fredericEducentre/landing-page-example.git'
+                git branch: 'main', url: 'https://github.com/TheYassAnz/landing-page-example.git'
             }
         }
 
