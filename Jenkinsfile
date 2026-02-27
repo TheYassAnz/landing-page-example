@@ -1,21 +1,39 @@
 pipeline {
     agent any
 
+    environment {
+        IMAGE_NAME = 'landing-page-example'
+        CONTAINER_NAME = 'landing-page-example'
+        HOST_PORT = '8080'
+        CONTAINER_PORT = '80'
+    }
+
+    triggers {
+        githubPush()
+    }
+
     stages {
-        stage('Pull repository') {
+        stage('Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/fredericEducentre/landing-page-example.git'
             }
         }
 
-        stage('Deploy') {
+        stage('Build Docker image') {
             steps {
-                sshagent(credentials: ['05a64152-0fbb-4882-bdc2-357bc9d884ac']) {
-                    sh '''
-                        scp -o StrictHostKeyChecking=no -r ./* \
-                        yassine-efrei@ssh-yassine-efrei.alwaysdata.net:~/www/
-                    '''
-                }
+                sh '''
+                    docker build -t ${IMAGE_NAME}:latest .
+                    docker tag ${IMAGE_NAME}:latest ${IMAGE_NAME}:${BUILD_NUMBER}
+                '''
+            }
+        }
+
+        stage('Restart container') {
+            steps {
+                sh '''
+                    docker rm -f ${CONTAINER_NAME} || true
+                    docker run -d --name ${CONTAINER_NAME} -p ${HOST_PORT}:${CONTAINER_PORT} ${IMAGE_NAME}:latest
+                '''
             }
         }
     }
